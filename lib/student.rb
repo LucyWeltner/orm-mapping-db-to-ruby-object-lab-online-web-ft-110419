@@ -47,6 +47,7 @@ class Student
       new_student = self.new_from_db(student)
       all_students << new_student
     end
+    all_students
   end
   
   #def self.find_by_name(name)
