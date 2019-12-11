@@ -35,8 +35,8 @@ class Student
   
   def self.new_from_db(row)
     new_student = self.new(row[1], row[2], row[0])
-    p new_student
     new_student.save
+    new_student
   end
   
   # def self.all
