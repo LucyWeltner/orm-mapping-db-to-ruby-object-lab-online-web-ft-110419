@@ -39,19 +39,19 @@ class Student
     new_student
   end
   
-  # def self.all
-  #   all_students = []
-  #   sql_all = "SELECT * FROM students"
-  #   all_students = DB[:conn].execute(sql_all)
-  #   all_students.each do |student|
-  #     new_student = self.new_from_db(student)
-  #     all_students << new_student
-  #   end
-  # end
+  def self.all
+    all_students = []
+    sql_all = "SELECT * FROM students"
+    all_students = DB[:conn].execute(sql_all)
+    all_students.each do |student|
+      new_student = self.new_from_db(student)
+      all_students << new_student
+    end
+  end
   
-  # def self.find_by_name(name)
-  #   found = self.all.find{|student| student.name = name}
-  # end
+  #def self.find_by_name(name)
+  #  found = self.all.find{|student| student.name = name}
+  #end
   # Remember, you can access your database connection anywhere in this class
   #  with DB[:conn]  
   
