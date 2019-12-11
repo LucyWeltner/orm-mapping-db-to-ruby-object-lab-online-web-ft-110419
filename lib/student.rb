@@ -34,7 +34,9 @@ class Student
   end
   
   def self.new_from_db(row)
+    p row
     new_student = self.new(row[1], row[2], row[0])
+    p new_student
     new_student.save
     new_student
   end
@@ -43,9 +45,8 @@ class Student
     all_students = []
     sql_all = "SELECT * FROM students"
     all_students = DB[:conn].execute(sql_all)
-    p all_students
     all_students.each do |student|
-      new_student = self.new_from_db(student)
+      new_student = Student.new_from_db(student)
       all_students << new_student
     end
     all_students
