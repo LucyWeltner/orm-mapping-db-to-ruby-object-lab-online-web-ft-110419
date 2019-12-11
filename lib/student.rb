@@ -43,6 +43,7 @@ class Student
     all_students = []
     sql_all = "SELECT * FROM students"
     all_students = DB[:conn].execute(sql_all)
+    p all_students
     all_students.each do |student|
       new_student = self.new_from_db(student)
       all_students << new_student
