@@ -53,6 +53,14 @@ class Student
   def self.find_by_name(name)
     found = self.all.find{|student| student.name = name}
   end
+  
+  def self.all_students_in_grade_9
+    grade_9_students = self.all.select{|student| student.grade = 9}
+  end 
+  
+  def self.students_below_12th_grade
+    not_seniors = self.all.select{|student| student.grade < 12}
+  end
   # Remember, you can access your database connection anywhere in this class
   #  with DB[:conn]  
   
