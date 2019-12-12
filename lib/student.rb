@@ -20,8 +20,6 @@ class Student
   def save
     sql_insert = "INSERT INTO students (name, grade) VALUES (?,?)"
     DB[:conn].execute(sql_insert, @name, @grade)
-    get_id = "SELECT last_insert_rowid() FROM students"
-    @id = DB[:conn].execute(get_id).flatten[0]
   end
   
   def self.create(student_hash) 
