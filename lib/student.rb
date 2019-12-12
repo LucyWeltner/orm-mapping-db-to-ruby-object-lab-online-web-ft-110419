@@ -34,9 +34,7 @@ class Student
   end
   
   def self.new_from_db(row)
-    p row
     new_student = self.new(row[1], row[2], row[0])
-    p new_student
     new_student.save
     new_student
   end
@@ -52,9 +50,9 @@ class Student
     all
   end
   
-  #def self.find_by_name(name)
-  #  found = self.all.find{|student| student.name = name}
-  #end
+  def self.find_by_name(name)
+    found = self.all.find{|student| student.name = name}
+  end
   # Remember, you can access your database connection anywhere in this class
   #  with DB[:conn]  
   
