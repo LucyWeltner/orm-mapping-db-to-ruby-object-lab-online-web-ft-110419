@@ -71,7 +71,7 @@ class Student
     first_student
   end
   
-  def self.all_students_in_grade_x(x)
+  def self.all_students_in_grade_X(x)
     students = self.all.select{|student| student.grade == x}
   end
   # Remember, you can access your database connection anywhere in this class
