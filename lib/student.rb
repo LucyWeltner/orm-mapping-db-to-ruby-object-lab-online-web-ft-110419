@@ -42,14 +42,14 @@ class Student
   end
   
   def self.all
-    all_students = []
+    all = []
     sql_all = "SELECT * FROM students"
     all_students = DB[:conn].execute(sql_all)
     all_students.each do |student|
       new_student = Student.new_from_db(student)
-      all_students << new_student
+      all << new_student
     end
-    all_students
+    all
   end
   
   #def self.find_by_name(name)
