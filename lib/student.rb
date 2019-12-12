@@ -61,6 +61,10 @@ class Student
   def self.students_below_12th_grade
     not_seniors = self.all.select{|student| student.grade < 12}
   end
+  
+  def self.first_X_students_in_grade_10(x)
+    students = self.all.select{|student| student.grade == 10}[0..x-1]
+  end
   # Remember, you can access your database connection anywhere in this class
   #  with DB[:conn]  
   
