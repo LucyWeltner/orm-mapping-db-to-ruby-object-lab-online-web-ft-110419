@@ -71,6 +71,7 @@ class Student
     student_info = DB[:conn].execute(sql)
     p student_info
     first_student = self.new_from_db(student_info)
+    p first_student
     first_student
   end
   # Remember, you can access your database connection anywhere in this class
